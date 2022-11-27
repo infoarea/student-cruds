@@ -1,0 +1,37 @@
+
+
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <a class="btn btn-primary" href="/student/create">Add New Student</a>
+            <a class="btn btn-danger" href="/student/unverifyed">Unverifyed Student</a>
+            <br>
+            <br>
+            <h2>Verifyed Student</h2>
+        </div>
+        <% studnts.forEach( (studnt, index) => { %>
+            
+            <div class="col-md-3">
+                
+                    <div class="card verifyed_student shadow p-3">
+                        <div class="card-body">
+                            <% if (studnt.photo == 'avatar.png') { %>
+                                                        
+                                <img src="/images/<%= studnt.photo %>" alt="">
+                                <% } else { %>
+                                    <img src="/images/students/<%= studnt.photo %>" alt="">
+                                
+                            <% } %>
+                            <h2><%= studnt.name %></h2>
+                            <p><%= studnt.cell %></p>
+                            <p><%= studnt.email %></p>
+                            <hr>
+                            <a class="btn btn-info" href="/student/<%= studnt.id %>">View</a>
+                        </div>
+                    </div>
+               
+            </div>
+       
+        <% }) %>
+    </div>
+</div>

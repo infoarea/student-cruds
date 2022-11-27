@@ -1,0 +1,74 @@
+
+
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <a class="btn btn-primary" href="/student">Back</a>
+            <br>
+            <br>
+            <div class="card shadow">
+                <div class="card-body">
+                    
+                    <h3>Update <%= student.name %>  Data</h3>
+
+                    <form action="/student/update/<%= student.id %>" method="POST" enctype="multipart/form-data">
+                        <div class="my-3">
+                            <label for="">Name</label>
+                            <input value="<%= student.name %>" name="name" class="form-control" type="text">
+                        </div>
+                        
+                        <div class="my-3">
+                            <label for="">Email</label>
+                            <input value="<%= student.email %>" name="email" class="form-control" type="text">
+                        </div>
+                        
+                        <div class="my-3">
+                            <label for="">Cell</label>
+                            <input value="<%= student.cell %>" name="cell" class="form-control" type="text">
+                        </div>
+                        
+                        <div class="my-3">
+                            <label for="">Location</label>
+                            <select class="form-control" name="location" id="">
+                                <option value="">--select--</option>
+                                
+                                 
+                                
+                                <option <% if (student.location == 'Demra') { %> selected <% } %> value="Demra">Demra</option>
+                                <option <% if (student.location == 'Jatrabari') { %> selected <% } %> value="Jatrabari">Jatrabari</option>
+                                <option <% if (student.location == 'Uttara') { %> selected <% } %> value="Uttara">Uttara</option>
+                                <option <% if (student.location == 'Gulshan') { %> selected <% } %> value="Gulshan">Gulshan</option>
+                                <option  <% if (student.location == 'Mirpur') { %> selected <% } %> value="Mirpur">Mirpur</option>
+                            </select>
+                        </div>
+                        <div class="my-3">
+                            <% if (student.photo == 'avatar.png') { %>
+                             
+                                <img class="preview_photo" src="/images/<%= student.photo %>" alt="">
+
+                                <% } else { %>
+
+                                    <img class="preview_photo" src="/images/students/<%= student.photo %>" alt="">
+                                 
+                            <% } %>
+                        </div>
+                        <div class="my-3">
+                            <label for="">Photo</label>
+                            <br>
+                            <label for="student_img">
+                                <img class="file_icon" src="https://www.freeiconspng.com/thumbs/camera-icon/camera-icon-21.png" alt="">
+                            </label>
+                            <input name="student_image" id="student_img" type="file">
+                        </div>
+                        
+                        <div class="my-3">
+                            <input class="form-control btn btn-primary" value="Create Now!" type="submit">
+                        </div>
+                    </form>
+                    
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+
+
+
+.student_table img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+.file_icon {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+#student_img {
+    display: none;
+}
+.student_data_show {
+    text-align: center;
+}
+.student_data_show img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.preview_photo {
+    max-width: 100%;
+}
+
+.verifyed_student img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    display: block;
+    margin: auto;
+}
+.verifyed_student  {
+    text-align: center;
+}
